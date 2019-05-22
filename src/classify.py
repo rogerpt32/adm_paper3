@@ -36,12 +36,14 @@ def get_classifier(method):
     elif method=="random_forest" or method=="randomforest" or method=="rf":
         clf=RandomForestClassifier()
     elif method=="adaboost" or method=="ada_boost" or method=="ab":
-        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
+        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=50,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1),n_estimators=1000,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear'),n_estimators=10,random_state=123,algorithm='SAMME')
+
     elif method=="mlp" or method=="neuralnetwork" or method=="multilayerperceptron" or method=="neural_network":
-        # clf = MLPClassifier(solver='adam', alpha=1e-4, hidden_layer_sizes=(520,300,200,180,120,60,90,60,12,10,10,6), random_state=123, early_stopping=False)
-        clf = MLPClassifier(solver='adam', tol=1e-5, alpha=1e-5, hidden_layer_sizes=(560,560,280,140,140,70,70,70,35,30,30,18,12,10,6), 
-                                n_iter_no_change=100, random_state=123, early_stopping=False,verbose=True)
+        clf = MLPClassifier(solver='adam', hidden_layer_sizes=(560,560,280,140,140,70,70,35,35,30,30,12,12,10,6), 
+                                n_iter_no_change=20, max_iter=500, random_state=123, early_stopping=False,verbose=False, tol=1e-5, alpha=1e-5,)
     else:
         print("Error: undefined method: %s"%method)
         clf=None
