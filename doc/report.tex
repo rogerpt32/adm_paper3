@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{hyperref}
 \usepackage{url}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -24,13 +25,22 @@ roger.pujol.torramorell@est.fib.upc.edu}}
 \maketitle
 
 \begin{abstract}
-Nowadays everybody carries a smartphone and these devices are full of sensors. This includes accelerometers which could be used to get information about the activity of the person carrying it. In this paper we will use the information given by the sensors of a smartphone to recognize the activity done by the owner. Since this is a classification problem, we will use and analyse different methods in order to see which is the better for this particular case.\\
+Nowadays everybody carries a smartphone and these devices are full of sensors. This includes accelerometers and gyroscopes, which could be used to get information about the activity of the person carrying it. In this paper we will use the information given by the sensors of a smartphone to recognize the activity done by the owner. Since this is a classification problem, we will use and analyse different methods in order to see which is the better for this particular case.\\
 The code of this project is Open Source and can be found in: \url{https://github.com/rogerpt32/adm_paper3}
 \end{abstract}
 
 \section{Introduction}
+\section{Data Set}
+The data set\cite{dataset} used in this paper is from the UCI Machine Learning Repository\cite{uci}. The experiments to extract the data have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured at a constant rate of 50Hz. For each record in the data set it is provided:
+\begin{itemize}
+\item Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+\item Triaxial Angular velocity from the gyroscope.
+\item A 561-feature vector with time and frequency domain variables.
+\item Its activity label.
+\item An identifier of the subject who carried out the experiment.
+\end{itemize}
 
-% \bibliographystyle{unsrt}
-% \bibliography{cites}
+\bibliographystyle{unsrt}
+\bibliography{cites}
 
 \end{document}
