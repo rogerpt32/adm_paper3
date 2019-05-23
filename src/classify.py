@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
+from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
@@ -25,35 +26,63 @@ rcParams['savefig.bbox'] = 'tight'
 rcParams['savefig.pad_inches'] = 0
 
 
-def get_classifier(method):
+def get_standard_name(method):
     method = method.lower()
     if method=="naive_bayes" or method=="naivebayes" or method=="nb":
-        clf=GaussianNB()
+        name='naive_bayes'
     elif method=="decision_tree" or method=="decisiontree" or method=="dt":
-        clf=DecisionTreeClassifier()
+        name='decision_tree'
     elif method=="svm" or method=="supportvectormachine":
-        clf=SVC()
-    elif method=="random_forest" or method=="randomforest" or method=="rf":
-        clf=RandomForestClassifier()
-    elif method=="adaboost" or method=="ada_boost" or method=="ab":
-        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=50,random_state=123)
-        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1),n_estimators=1000,random_state=123)
-        # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
-        # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear'),n_estimators=10,random_state=123,algorithm='SAMME')
-
+        name='svm'
     elif method=="mlp" or method=="neuralnetwork" or method=="multilayerperceptron" or method=="neural_network":
-        clf = MLPClassifier(solver='adam', hidden_layer_sizes=(560,560,280,140,140,70,70,35,35,30,30,12,12,10,6), 
-                                n_iter_no_change=20, max_iter=500, random_state=123, early_stopping=False,verbose=False, tol=1e-5, alpha=1e-5,)
+        name='mlp'
+    elif method=="random_forest" or method=="randomforest" or method=="rf":
+        name='random_forest'
+    elif method=="adaboost" or method=="ada_boost" or method=="ab":
+        name='adaboost'
+    else:
+        name='error'
+    return name
+
+def get_classifier(method):
+    method = method.lower()
+    if method=="naive_bayes":
+        clf=GaussianNB()
+
+    elif method=="decision_tree":
+        clf=DecisionTreeClassifier(criterion='entropy',max_depth=5,random_state=123)
+
+    elif method=="svm":
+        # clf=SVC(kernel='rbf',C=0.9,random_state=123) # fast but less accurate
+        # clf=SVC(kernel='poly',C=1.0,degree=2,random_state=123) # very slow but very accurate
+        # clf=SVC(kernel='sigmoid',C=10.0,coef0=0.1,tol=1e-5,random_state=123) # very bad
+        clf=SVC(kernel='linear',C=1.0,random_state=123) # slow but very accurate
+
+    elif method=="mlp":
+        clf = MLPClassifier(solver='adam', hidden_layer_sizes=(560,560,280,140,140,70,70,35,35,30,30,12,12,10,6),
+                                # verbose=True, # Uncomment this line to see how the mlp learns
+                                n_iter_no_change=20, max_iter=500, early_stopping=False, tol=1e-5, alpha=1e-5, random_state=123)
+
+    elif method=="random_forest":
+        clf=RandomForestClassifier(max_depth=4,criterion='gini',random_state=123)
+
+    elif method=="adaboost":
+        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=50,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1,random_state=123),n_estimators=1000,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear',random_state=123),n_estimators=10,algorithm='SAMME',random_state=123)
+
     else:
         print("Error: undefined method: %s"%method)
         clf=None
+
     return clf
 
 def plot_confusion_matrix(cm,test_y,pred_y,method,show,save):
     classes = list(set(test_y))
     classes.sort()
     fig, ax = plt.subplots()
-    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.get_cmap('Blues'))
     ax.figure.colorbar(im, ax=ax)
     ax.set(xticks=np.arange(cm.shape[1]),
            yticks=np.arange(cm.shape[0]),
@@ -77,19 +106,21 @@ def plot_confusion_matrix(cm,test_y,pred_y,method,show,save):
     if save:
         fig.savefig("../plots/cm_%s.pdf"%method)
 
+
 if __name__ == '__main__':
     warnings.simplefilter(action='ignore', category=FutureWarning)
 
     parser = argparse.ArgumentParser(description='Classify the data.')
-    parser.add_argument('--methods', help='delimited list input', type=str, default="naive_bayes,decision_tree,svm,mlp,random_forest,adaboost")
-    parser.add_argument('--show_plot', action='store_true', help='show the confusion matrices with plots')
-    parser.add_argument('--save_plot', action='store_true', help='save the confusion matrices with plots')
+    parser.add_argument('-m','--methods', help='delimited list input', type=str, default="naive_bayes,decision_tree,svm,mlp,random_forest,adaboost")
+    parser.add_argument('-p','--show_plot', action='store_true', help='show the confusion matrices with plots')
+    parser.add_argument('-s','--save_plot', action='store_true', help='save the confusion matrices with plots')
 
     args = parser.parse_args()
 
-    methods = [item for item in args.methods.split(',')]
+    methods = [get_standard_name(item) for item in args.methods.split(',')]
     # print(methods)
     data = pd.read_csv("../data/train.csv")
+    data = shuffle(data,random_state=123)
     train_x,test_x,train_y,test_y = train_test_split(data.drop("activity",axis=1),data[['activity']],train_size=0.75,random_state=123)
     train_y = train_y.values.ravel()
     test_y = test_y.values.ravel()
