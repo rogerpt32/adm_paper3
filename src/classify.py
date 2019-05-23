@@ -53,22 +53,23 @@ def get_classifier(method):
         clf=DecisionTreeClassifier(criterion='entropy',max_depth=5,random_state=123)
 
     elif method=="svm":
-        # clf=SVC(kernel='rbf',C=0.9,random_state=123) # fast but less accurate
-        # clf=SVC(kernel='poly',C=1.0,degree=2,random_state=123) # very slow but very accurate
-        # clf=SVC(kernel='sigmoid',C=10.0,coef0=0.1,tol=1e-5,random_state=123) # very bad
-        clf=SVC(kernel='linear',C=1.0,random_state=123) # slow but very accurate
+        # clf=SVC(kernel='rbf',C=0.9,random_state=123)
+        # clf=SVC(kernel='poly',C=1.0,degree=2,random_state=123)
+        # clf=SVC(kernel='sigmoid',C=10.0,coef0=0.1,tol=1e-5,random_state=123)
+        clf=SVC(kernel='linear',C=1.0,random_state=123)
 
     elif method=="mlp":
-        clf = MLPClassifier(solver='adam', hidden_layer_sizes=(560,560,280,140,140,70,70,35,35,30,30,12,12,10,6),
+        clf = MLPClassifier(solver='adam', hidden_layer_sizes=(12,6),
                                 # verbose=True, # Uncomment this line to see how the mlp learns
-                                n_iter_no_change=20, max_iter=500, early_stopping=False, tol=1e-5, alpha=1e-5, random_state=123)
+                                n_iter_no_change=20, max_iter=500, early_stopping=False, tol=1e-3, alpha=1e-5, random_state=123)
 
     elif method=="random_forest":
         clf=RandomForestClassifier(max_depth=4,criterion='gini',random_state=123)
 
     elif method=="adaboost":
-        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=50,random_state=123)
-        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1,random_state=123),n_estimators=1000,random_state=123)
+        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3),n_estimators=50,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1,random_state=123),n_estimators=500,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear',random_state=123),n_estimators=10,algorithm='SAMME',random_state=123)
 
@@ -120,6 +121,7 @@ if __name__ == '__main__':
     methods = [get_standard_name(item) for item in args.methods.split(',')]
     # print(methods)
     data = pd.read_csv("../data/train.csv")
+    data = data.drop("rn",axis=1)
     data = shuffle(data,random_state=123)
     train_x,test_x,train_y,test_y = train_test_split(data.drop("activity",axis=1),data[['activity']],train_size=0.75,random_state=123)
     train_y = train_y.values.ravel()
