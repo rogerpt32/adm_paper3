@@ -65,11 +65,11 @@ def get_classifier(method):
                                 n_iter_no_change=20, max_iter=500, early_stopping=False, tol=1e-3, alpha=1e-5, random_state=123)
 
     elif method=="random_forest":
-        clf=RandomForestClassifier(max_depth=4,criterion='gini',random_state=123)
+        clf=RandomForestClassifier(max_depth=5,criterion='gini',random_state=123)
 
     elif method=="adaboost":
-        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3),n_estimators=50,random_state=123)
-        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
+        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3),n_estimators=50,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1,random_state=123),n_estimators=500,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear',random_state=123),n_estimators=10,algorithm='SAMME',random_state=123)

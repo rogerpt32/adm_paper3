@@ -100,6 +100,7 @@ The fourth method we used is a Multilayer Perceptron or MLP. This method is comp
 \end{figure}
 
 \subsection{Random Forest}
+The fifth method we used is Random Forest. This method basically uses multiple Decision Trees which are created with different conditions to finally predict using the average answer of all the trees. The parameters we tuned for this model are the same that we had in the single Decision Tree. Here to check the power of Random Forest we first tried with depth 5 to compare the result to the single Decision Tree, and the accuracy improved by around 2-3\%. Since its not much then we tried reducing the depth, and we see that using depth 4 we have almost the same accuracy than with a single Decision Tree. Finally we left the best which was the depth 5 which has an accuracy of 89.59\%. Taking a look at the confusion matrix (see Figure \ref{fig:cm_rf}) we can see that the results are almost the same that the ones from the single Decision Tree with a very slight improvement but with a small deterioration of the accuracy when predicting the SITTING class.
 
 \begin{figure}[htbp]
     \centering
@@ -109,6 +110,10 @@ The fourth method we used is a Multilayer Perceptron or MLP. This method is comp
 \end{figure}
 
 \subsection{AdaBoost}
+Finally the last method we used is AdaBoost. This method takes a weak estimator and uses it multiplt times in order to get a strong estimator. As base estimators we tested Decision Trees with depth 1, 2 and 3 using a number of estimators inversly proportional to the depth size. Also we tested with Naive Bayes and SVM. \\
+Naive Bayes almost don't have any difference and its logic given the way how Naive Bayes works. SVM is even worse than NB since its accuracy drops to 50\%, this two methods show which kind of estimators shouldn't be used as base estimators for AdaBoost because (as stated before) it works with weak estimators that can be improved by creating multiple of them. \\ 
+\newpage
+With the Decision Trees using small depth we create a weak estimators which the impact of different data might be relevant. Using depth 1 with 500 estimators, we have a very bad model which can only predict correctly some of the classes, probably because some classes are defined better with multiple features. Using depth 2 with 100 estimators, the accuracy improves a lot but still worse than all the models used before. Finally using depth 3 with 50 estimators we have a good model with a test accuracy of 92.25\%. Taking a look at the confusion matrix (see Figure \ref{fig:cm_ab}) we see the same distribution of errors of all the previous models.
 
 \begin{figure}[htbp]
     \centering
@@ -118,6 +123,8 @@ The fourth method we used is a Multilayer Perceptron or MLP. This method is comp
 \end{figure}
 
 \section{Conclusions}
+
+All the methods tested could be ``acceptable'' for some applications since all of them have an accuracy above the 80\%. If we want the best classification we should rely on SVM or MLP methods since those gave accuracies above 95\% which is very high given that there are many features and not a lot of instances.
 
 \bibliographystyle{unsrt}
 \bibliography{cites}
