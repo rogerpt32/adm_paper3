@@ -1,0 +1,412 @@
+\documentclass{standalone}
+\usepackage[x11names, svgnames, rgb]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage{amsmath}
+%
+%
+
+%
+
+%
+
+\begin{document}
+\pagestyle{empty}
+% Start of code
+% \begin{tikzpicture}[anchor=mid,>=latex',line join=bevel,]
+\begin{tikzpicture}[>=latex',line join=bevel,xscale=0.6]
+  \pgfsetlinewidth{1bp}
+%%
+\pgfsetcolor{black}
+  % Edge: 0 -> 1
+  \draw [->] (230.11bp,608.28bp) .. controls (247.84bp,611.02bp) and (265.94bp,613.81bp)  .. (292.99bp,617.99bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (272.82bp,632.76bp) node {True};
+  % Edge: 0 -> 2
+  \draw [->] (230.11bp,573.17bp) .. controls (238.65bp,571.88bp) and (247.28bp,570.58bp)  .. (265.86bp,567.78bp);
+  \draw (245.75bp,552.94bp) node {False};
+  % Edge: 2 -> 3
+  \draw [->] (463.69bp,585.64bp) .. controls (469.99bp,588.76bp) and (476.16bp,592.06bp)  .. (482.0bp,595.5bp) .. controls (512.86bp,613.67bp) and (544.24bp,638.67bp)  .. (576.1bp,666.39bp);
+  % Edge: 2 -> 18
+  \draw [->] (434.8bp,517.34bp) .. controls (467.74bp,498.83bp) and (508.58bp,475.88bp)  .. (551.81bp,451.6bp);
+  % Edge: 3 -> 4
+  \draw [->] (649.08bp,734.52bp) .. controls (687.71bp,770.45bp) and (748.64bp,827.11bp)  .. (797.37bp,872.43bp);
+  % Edge: 3 -> 11
+  \draw [->] (700.68bp,700.5bp) .. controls (713.34bp,700.5bp) and (726.41bp,700.5bp)  .. (749.37bp,700.5bp);
+  % Edge: 4 -> 5
+  \draw [->] (898.22bp,940.55bp) .. controls (922.57bp,953.46bp) and (950.48bp,968.26bp)  .. (984.74bp,986.43bp);
+  % Edge: 4 -> 8
+  \draw [->] (918.67bp,906.5bp) .. controls (932.66bp,906.5bp) and (947.2bp,906.5bp)  .. (971.41bp,906.5bp);
+  % Edge: 5 -> 6
+  \draw [->] (1133.7bp,1048.9bp) .. controls (1146.3bp,1053.1bp) and (1159.3bp,1057.4bp)  .. (1181.6bp,1064.9bp);
+  % Edge: 5 -> 7
+  \draw [->] (1133.7bp,1020.5bp) .. controls (1144.4bp,1020.5bp) and (1155.3bp,1020.5bp)  .. (1176.4bp,1020.5bp);
+  % Edge: 8 -> 9
+  \draw [->] (1126.7bp,922.27bp) .. controls (1141.9bp,925.33bp) and (1157.8bp,928.57bp)  .. (1183.3bp,933.73bp);
+  % Edge: 8 -> 10
+  \draw [->] (1126.7bp,896.23bp) .. controls (1142.9bp,894.1bp) and (1160.0bp,891.84bp)  .. (1186.5bp,888.35bp);
+  % Edge: 11 -> 12
+  \draw [->] (918.67bp,717.43bp) .. controls (930.42bp,719.78bp) and (942.55bp,722.21bp)  .. (964.41bp,726.58bp);
+  % Edge: 11 -> 15
+  \draw [->] (918.67bp,683.57bp) .. controls (932.66bp,680.77bp) and (947.2bp,677.86bp)  .. (971.41bp,673.02bp);
+  % Edge: 12 -> 13
+  \draw [->] (1133.7bp,769.07bp) .. controls (1147.9bp,773.34bp) and (1162.5bp,777.77bp)  .. (1186.4bp,784.97bp);
+  % Edge: 12 -> 14
+  \draw [->] (1133.7bp,740.7bp) .. controls (1144.4bp,740.35bp) and (1155.3bp,739.99bp)  .. (1176.4bp,739.29bp);
+  % Edge: 15 -> 16
+  \draw [->] (1126.7bp,660.43bp) .. controls (1141.9bp,661.0bp) and (1157.8bp,661.61bp)  .. (1183.3bp,662.57bp);
+  % Edge: 15 -> 17
+  \draw [->] (1126.7bp,634.4bp) .. controls (1143.0bp,629.56bp) and (1160.3bp,624.43bp)  .. (1186.5bp,616.65bp);
+  % Edge: 18 -> 19
+  \draw [->] (707.08bp,417.5bp) .. controls (715.61bp,417.5bp) and (724.28bp,417.5bp)  .. (742.9bp,417.5bp);
+  % Edge: 18 -> 26
+  \draw [->] (649.08bp,383.48bp) .. controls (687.71bp,347.55bp) and (748.64bp,290.89bp)  .. (797.37bp,245.57bp);
+  % Edge: 19 -> 20
+  \draw [->] (925.18bp,435.74bp) .. controls (933.65bp,437.43bp) and (942.26bp,439.15bp)  .. (960.76bp,442.85bp);
+  % Edge: 19 -> 23
+  \draw [->] (925.18bp,399.26bp) .. controls (933.65bp,397.57bp) and (942.26bp,395.85bp)  .. (960.76bp,392.15bp);
+  % Edge: 20 -> 21
+  \draw [->] (1137.1bp,486.67bp) .. controls (1148.1bp,489.94bp) and (1159.3bp,493.29bp)  .. (1180.0bp,499.43bp);
+  % Edge: 20 -> 22
+  \draw [->] (1137.1bp,457.18bp) .. controls (1145.6bp,456.86bp) and (1154.2bp,456.53bp)  .. (1172.9bp,455.83bp);
+  % Edge: 23 -> 24
+  \draw [->] (1137.1bp,377.41bp) .. controls (1147.8bp,377.76bp) and (1158.9bp,378.13bp)  .. (1180.0bp,378.83bp);
+  % Edge: 23 -> 25
+  \draw [->] (1137.1bp,347.91bp) .. controls (1146.8bp,344.98bp) and (1156.7bp,341.98bp)  .. (1176.3bp,336.08bp);
+  % Edge: 26 -> 27
+  \draw [->] (918.67bp,211.5bp) .. controls (931.46bp,211.5bp) and (944.71bp,211.5bp)  .. (967.92bp,211.5bp);
+  % Edge: 26 -> 30
+  \draw [->] (898.22bp,177.45bp) .. controls (922.57bp,164.54bp) and (950.48bp,149.74bp)  .. (984.74bp,131.57bp);
+  % Edge: 27 -> 28
+  \draw [->] (1130.1bp,222.21bp) .. controls (1143.1bp,223.93bp) and (1156.7bp,225.72bp)  .. (1180.0bp,228.8bp);
+  % Edge: 27 -> 29
+  \draw [->] (1130.1bp,195.06bp) .. controls (1145.2bp,191.99bp) and (1161.1bp,188.77bp)  .. (1186.3bp,183.66bp);
+  % Edge: 30 -> 31
+  \draw [->] (1123.7bp,97.5bp) .. controls (1140.7bp,97.5bp) and (1158.8bp,97.5bp)  .. (1186.2bp,97.5bp);
+  % Edge: 30 -> 32
+  \draw [->] (1123.7bp,72.468bp) .. controls (1140.8bp,66.741bp) and (1159.1bp,60.616bp)  .. (1186.2bp,51.545bp);
+  % Node: 0
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (230.0bp,624.5bp) -- (0.0bp,624.5bp) -- (0.0bp,556.5bp) -- (230.0bp,556.5bp) -- cycle;
+  \draw (115.0bp,609.3bp) node {X[56] <= -0.671};
+  \draw (115.0bp,594.3bp) node {gini = 0.831};
+  \draw (115.0bp,579.3bp) node {samples = 2706};
+  \draw (115.0bp,564.3bp) node {value = [520, 469, 498, 445, 360, 414]};
+\end{scope}
+  % Node: 1
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (455.0bp,657.0bp) -- (293.0bp,657.0bp) -- (293.0bp,604.0bp) -- (455.0bp,604.0bp) -- cycle;
+  \draw (374.0bp,641.8bp) node {gini = 0.0};
+  \draw (374.0bp,626.8bp) node {samples = 520};
+  \draw (374.0bp,611.8bp) node {value = [520, 0, 0, 0, 0, 0]};
+\end{scope}
+  % Node: 2
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (482.0bp,585.5bp) -- (266.0bp,585.5bp) -- (266.0bp,517.5bp) -- (482.0bp,517.5bp) -- cycle;
+  \draw (374.0bp,570.3bp) node {X[360] <= -0.974};
+  \draw (374.0bp,555.3bp) node {gini = 0.798};
+  \draw (374.0bp,540.3bp) node {samples = 2186};
+  \draw (374.0bp,525.3bp) node {value = [0, 469, 498, 445, 360, 414]};
+\end{scope}
+  % Node: 3
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (700.5bp,734.5bp) -- (524.5bp,734.5bp) -- (524.5bp,666.5bp) -- (700.5bp,666.5bp) -- cycle;
+  \draw (612.5bp,719.3bp) node {X[559] <= 0.141};
+  \draw (612.5bp,704.3bp) node {gini = 0.5};
+  \draw (612.5bp,689.3bp) node {samples = 967};
+  \draw (612.5bp,674.3bp) node {value = [0, 469, 498, 0, 0, 0]};
+\end{scope}
+  % Node: 18
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (707.0bp,451.5bp) -- (518.0bp,451.5bp) -- (518.0bp,383.5bp) -- (707.0bp,383.5bp) -- cycle;
+  \draw (612.5bp,436.3bp) node {X[508] <= -0.519};
+  \draw (612.5bp,421.3bp) node {gini = 0.664};
+  \draw (612.5bp,406.3bp) node {samples = 1219};
+  \draw (612.5bp,391.3bp) node {value = [0, 0, 0, 445, 360, 414]};
+\end{scope}
+  % Node: 4
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (918.5bp,940.5bp) -- (749.5bp,940.5bp) -- (749.5bp,872.5bp) -- (918.5bp,872.5bp) -- cycle;
+  \draw (834.0bp,925.3bp) node {X[429] <= -0.911};
+  \draw (834.0bp,910.3bp) node {gini = 0.228};
+  \draw (834.0bp,895.3bp) node {samples = 473};
+  \draw (834.0bp,880.3bp) node {value = [0, 411, 62, 0, 0, 0]};
+\end{scope}
+  % Node: 11
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (918.5bp,734.5bp) -- (749.5bp,734.5bp) -- (749.5bp,666.5bp) -- (918.5bp,666.5bp) -- cycle;
+  \draw (834.0bp,719.3bp) node {X[185] <= 0.258};
+  \draw (834.0bp,704.3bp) node {gini = 0.207};
+  \draw (834.0bp,689.3bp) node {samples = 494};
+  \draw (834.0bp,674.3bp) node {value = [0, 58, 436, 0, 0, 0]};
+\end{scope}
+  % Node: 5
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1133.5bp,1054.5bp) -- (964.5bp,1054.5bp) -- (964.5bp,986.5bp) -- (1133.5bp,986.5bp) -- cycle;
+  \draw (1049.0bp,1039.3bp) node {X[119] <= -0.362};
+  \draw (1049.0bp,1024.3bp) node {gini = 0.174};
+  \draw (1049.0bp,1009.3bp) node {samples = 446};
+  \draw (1049.0bp,994.3bp) node {value = [0, 403, 43, 0, 0, 0]};
+\end{scope}
+  % Node: 8
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1126.5bp,940.5bp) -- (971.5bp,940.5bp) -- (971.5bp,872.5bp) -- (1126.5bp,872.5bp) -- cycle;
+  \draw (1049.0bp,925.3bp) node {X[285] <= -0.895};
+  \draw (1049.0bp,910.3bp) node {gini = 0.417};
+  \draw (1049.0bp,895.3bp) node {samples = 27};
+  \draw (1049.0bp,880.3bp) node {value = [0, 8, 19, 0, 0, 0]};
+\end{scope}
+  % Node: 6
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1342.0bp,1118.0bp) -- (1180.0bp,1118.0bp) -- (1180.0bp,1065.0bp) -- (1342.0bp,1065.0bp) -- cycle;
+  \draw (1261.0bp,1102.8bp) node {gini = 0.496};
+  \draw (1261.0bp,1087.8bp) node {samples = 22};
+  \draw (1261.0bp,1072.8bp) node {value = [0, 10, 12, 0, 0, 0]};
+\end{scope}
+  % Node: 7
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1345.5bp,1047.0bp) -- (1176.5bp,1047.0bp) -- (1176.5bp,994.0bp) -- (1345.5bp,994.0bp) -- cycle;
+  \draw (1261.0bp,1031.8bp) node {gini = 0.136};
+  \draw (1261.0bp,1016.8bp) node {samples = 424};
+  \draw (1261.0bp,1001.8bp) node {value = [0, 393, 31, 0, 0, 0]};
+\end{scope}
+  % Node: 9
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1338.5bp,976.0bp) -- (1183.5bp,976.0bp) -- (1183.5bp,923.0bp) -- (1338.5bp,923.0bp) -- cycle;
+  \draw (1261.0bp,960.8bp) node {gini = 0.1};
+  \draw (1261.0bp,945.8bp) node {samples = 19};
+  \draw (1261.0bp,930.8bp) node {value = [0, 1, 18, 0, 0, 0]};
+\end{scope}
+  % Node: 10
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,905.0bp) -- (1186.5bp,905.0bp) -- (1186.5bp,852.0bp) -- (1335.5bp,852.0bp) -- cycle;
+  \draw (1261.0bp,889.8bp) node {gini = 0.219};
+  \draw (1261.0bp,874.8bp) node {samples = 8};
+  \draw (1261.0bp,859.8bp) node {value = [0, 7, 1, 0, 0, 0]};
+\end{scope}
+  % Node: 12
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1133.5bp,777.5bp) -- (964.5bp,777.5bp) -- (964.5bp,709.5bp) -- (1133.5bp,709.5bp) -- cycle;
+  \draw (1049.0bp,762.3bp) node {X[0] <= 0.251};
+  \draw (1049.0bp,747.3bp) node {gini = 0.156};
+  \draw (1049.0bp,732.3bp) node {samples = 469};
+  \draw (1049.0bp,717.3bp) node {value = [0, 40, 429, 0, 0, 0]};
+\end{scope}
+  % Node: 15
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1126.5bp,691.5bp) -- (971.5bp,691.5bp) -- (971.5bp,623.5bp) -- (1126.5bp,623.5bp) -- cycle;
+  \draw (1049.0bp,676.3bp) node {X[57] <= -0.95};
+  \draw (1049.0bp,661.3bp) node {gini = 0.403};
+  \draw (1049.0bp,646.3bp) node {samples = 25};
+  \draw (1049.0bp,631.3bp) node {value = [0, 18, 7, 0, 0, 0]};
+\end{scope}
+  % Node: 13
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,834.0bp) -- (1186.5bp,834.0bp) -- (1186.5bp,781.0bp) -- (1335.5bp,781.0bp) -- cycle;
+  \draw (1261.0bp,818.8bp) node {gini = 0.298};
+  \draw (1261.0bp,803.8bp) node {samples = 11};
+  \draw (1261.0bp,788.8bp) node {value = [0, 9, 2, 0, 0, 0]};
+\end{scope}
+  % Node: 14
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1345.5bp,763.0bp) -- (1176.5bp,763.0bp) -- (1176.5bp,710.0bp) -- (1345.5bp,710.0bp) -- cycle;
+  \draw (1261.0bp,747.8bp) node {gini = 0.126};
+  \draw (1261.0bp,732.8bp) node {samples = 458};
+  \draw (1261.0bp,717.8bp) node {value = [0, 31, 427, 0, 0, 0]};
+\end{scope}
+  % Node: 16
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1338.5bp,692.0bp) -- (1183.5bp,692.0bp) -- (1183.5bp,639.0bp) -- (1338.5bp,639.0bp) -- cycle;
+  \draw (1261.0bp,676.8bp) node {gini = 0.0};
+  \draw (1261.0bp,661.8bp) node {samples = 18};
+  \draw (1261.0bp,646.8bp) node {value = [0, 18, 0, 0, 0, 0]};
+\end{scope}
+  % Node: 17
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,621.0bp) -- (1186.5bp,621.0bp) -- (1186.5bp,568.0bp) -- (1335.5bp,568.0bp) -- cycle;
+  \draw (1261.0bp,605.8bp) node {gini = 0.0};
+  \draw (1261.0bp,590.8bp) node {samples = 7};
+  \draw (1261.0bp,575.8bp) node {value = [0, 0, 7, 0, 0, 0]};
+\end{scope}
+  % Node: 19
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (925.0bp,451.5bp) -- (743.0bp,451.5bp) -- (743.0bp,383.5bp) -- (925.0bp,383.5bp) -- cycle;
+  \draw (834.0bp,436.3bp) node {X[65] <= -0.545};
+  \draw (834.0bp,421.3bp) node {gini = 0.572};
+  \draw (834.0bp,406.3bp) node {samples = 916};
+  \draw (834.0bp,391.3bp) node {value = [0, 0, 0, 440, 77, 399]};
+\end{scope}
+  % Node: 26
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (918.5bp,245.5bp) -- (749.5bp,245.5bp) -- (749.5bp,177.5bp) -- (918.5bp,177.5bp) -- cycle;
+  \draw (834.0bp,230.3bp) node {X[433] <= -0.034};
+  \draw (834.0bp,215.3bp) node {gini = 0.125};
+  \draw (834.0bp,200.3bp) node {samples = 303};
+  \draw (834.0bp,185.3bp) node {value = [0, 0, 0, 5, 283, 15]};
+\end{scope}
+  % Node: 20
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1137.0bp,494.5bp) -- (961.0bp,494.5bp) -- (961.0bp,426.5bp) -- (1137.0bp,426.5bp) -- cycle;
+  \draw (1049.0bp,479.3bp) node {X[57] <= -0.962};
+  \draw (1049.0bp,464.3bp) node {gini = 0.407};
+  \draw (1049.0bp,449.3bp) node {samples = 471};
+  \draw (1049.0bp,434.3bp) node {value = [0, 0, 0, 58, 60, 353]};
+\end{scope}
+  % Node: 23
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1137.0bp,408.5bp) -- (961.0bp,408.5bp) -- (961.0bp,340.5bp) -- (1137.0bp,340.5bp) -- cycle;
+  \draw (1049.0bp,393.3bp) node {X[448] <= -0.967};
+  \draw (1049.0bp,378.3bp) node {gini = 0.251};
+  \draw (1049.0bp,363.3bp) node {samples = 445};
+  \draw (1049.0bp,348.3bp) node {value = [0, 0, 0, 382, 17, 46]};
+\end{scope}
+  % Node: 21
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1342.0bp,550.0bp) -- (1180.0bp,550.0bp) -- (1180.0bp,497.0bp) -- (1342.0bp,497.0bp) -- cycle;
+  \draw (1261.0bp,534.8bp) node {gini = 0.541};
+  \draw (1261.0bp,519.8bp) node {samples = 67};
+  \draw (1261.0bp,504.8bp) node {value = [0, 0, 0, 31, 33, 3]};
+\end{scope}
+  % Node: 22
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1349.0bp,479.0bp) -- (1173.0bp,479.0bp) -- (1173.0bp,426.0bp) -- (1349.0bp,426.0bp) -- cycle;
+  \draw (1261.0bp,463.8bp) node {gini = 0.241};
+  \draw (1261.0bp,448.8bp) node {samples = 404};
+  \draw (1261.0bp,433.8bp) node {value = [0, 0, 0, 27, 27, 350]};
+\end{scope}
+  % Node: 24
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1342.0bp,408.0bp) -- (1180.0bp,408.0bp) -- (1180.0bp,355.0bp) -- (1342.0bp,355.0bp) -- cycle;
+  \draw (1261.0bp,392.8bp) node {gini = 0.549};
+  \draw (1261.0bp,377.8bp) node {samples = 43};
+  \draw (1261.0bp,362.8bp) node {value = [0, 0, 0, 6, 11, 26]};
+\end{scope}
+  % Node: 25
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1345.5bp,337.0bp) -- (1176.5bp,337.0bp) -- (1176.5bp,284.0bp) -- (1345.5bp,284.0bp) -- cycle;
+  \draw (1261.0bp,321.8bp) node {gini = 0.122};
+  \draw (1261.0bp,306.8bp) node {samples = 402};
+  \draw (1261.0bp,291.8bp) node {value = [0, 0, 0, 376, 6, 20]};
+\end{scope}
+  % Node: 27
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1130.0bp,245.5bp) -- (968.0bp,245.5bp) -- (968.0bp,177.5bp) -- (1130.0bp,177.5bp) -- cycle;
+  \draw (1049.0bp,230.3bp) node {X[559] <= 0.353};
+  \draw (1049.0bp,215.3bp) node {gini = 0.073};
+  \draw (1049.0bp,200.3bp) node {samples = 292};
+  \draw (1049.0bp,185.3bp) node {value = [0, 0, 0, 3, 281, 8]};
+\end{scope}
+  % Node: 30
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1123.5bp,131.5bp) -- (974.5bp,131.5bp) -- (974.5bp,63.5bp) -- (1123.5bp,63.5bp) -- cycle;
+  \draw (1049.0bp,116.3bp) node {X[177] <= -0.529};
+  \draw (1049.0bp,101.3bp) node {gini = 0.529};
+  \draw (1049.0bp,86.3bp) node {samples = 11};
+  \draw (1049.0bp,71.3bp) node {value = [0, 0, 0, 2, 2, 7]};
+\end{scope}
+  % Node: 28
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1342.0bp,266.0bp) -- (1180.0bp,266.0bp) -- (1180.0bp,213.0bp) -- (1342.0bp,213.0bp) -- cycle;
+  \draw (1261.0bp,250.8bp) node {gini = 0.054};
+  \draw (1261.0bp,235.8bp) node {samples = 289};
+  \draw (1261.0bp,220.8bp) node {value = [0, 0, 0, 3, 281, 5]};
+\end{scope}
+  % Node: 29
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,195.0bp) -- (1186.5bp,195.0bp) -- (1186.5bp,142.0bp) -- (1335.5bp,142.0bp) -- cycle;
+  \draw (1261.0bp,179.8bp) node {gini = 0.0};
+  \draw (1261.0bp,164.8bp) node {samples = 3};
+  \draw (1261.0bp,149.8bp) node {value = [0, 0, 0, 0, 0, 3]};
+\end{scope}
+  % Node: 31
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,124.0bp) -- (1186.5bp,124.0bp) -- (1186.5bp,71.0bp) -- (1335.5bp,71.0bp) -- cycle;
+  \draw (1261.0bp,108.8bp) node {gini = 0.0};
+  \draw (1261.0bp,93.8bp) node {samples = 7};
+  \draw (1261.0bp,78.8bp) node {value = [0, 0, 0, 0, 0, 7]};
+\end{scope}
+  % Node: 32
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (1335.5bp,53.0bp) -- (1186.5bp,53.0bp) -- (1186.5bp,0.0bp) -- (1335.5bp,0.0bp) -- cycle;
+  \draw (1261.0bp,37.8bp) node {gini = 0.5};
+  \draw (1261.0bp,22.8bp) node {samples = 4};
+  \draw (1261.0bp,7.8bp) node {value = [0, 0, 0, 2, 2, 0]};
+\end{scope}
+%
+\end{tikzpicture}
+% End of code
+
+%
+\end{document}
+%
+
+
+

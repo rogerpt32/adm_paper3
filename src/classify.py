@@ -11,6 +11,7 @@ from matplotlib import rcParams
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
+from sklearn import tree
 
 from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
@@ -50,13 +51,13 @@ def get_classifier(method):
         clf=GaussianNB()
 
     elif method=="decision_tree":
-        clf=DecisionTreeClassifier(criterion='entropy',max_depth=5,random_state=123)
+        clf=DecisionTreeClassifier(criterion='gini',max_depth=5,random_state=123)
 
     elif method=="svm":
-        # clf=SVC(kernel='rbf',C=0.9,random_state=123)
-        # clf=SVC(kernel='poly',C=1.0,degree=2,random_state=123)
+        # clf=SVC(kernel='rbf',C=100.0,random_state=123)
+        # clf=SVC(kernel='poly',C=100.0,degree=2,random_state=123)
         # clf=SVC(kernel='sigmoid',C=10.0,coef0=0.1,tol=1e-5,random_state=123)
-        clf=SVC(kernel='linear',C=1.0,random_state=123)
+        clf=SVC(kernel='linear',C=100.0,random_state=123)
 
     elif method=="mlp":
         clf = MLPClassifier(solver='adam', hidden_layer_sizes=(12,6),
@@ -67,8 +68,8 @@ def get_classifier(method):
         clf=RandomForestClassifier(max_depth=4,criterion='gini',random_state=123)
 
     elif method=="adaboost":
-        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3),n_estimators=50,random_state=123)
-        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
+        # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=3),n_estimators=50,random_state=123)
+        clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),n_estimators=100,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1,random_state=123),n_estimators=500,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=GaussianNB(),n_estimators=100,random_state=123)
         # clf=AdaBoostClassifier(base_estimator=SVC(kernel='linear',random_state=123),n_estimators=10,algorithm='SAMME',random_state=123)
@@ -156,6 +157,8 @@ if __name__ == '__main__':
             cm=confusion_matrix(test_y,pred_y)
             print(cm)
             if args.show_plot or args.save_plot:
+                if args.save_plot and method=="decision_tree":
+                    tree.export_graphviz(clf,'../plots/decision_tree.dot',rotate=True)
                 plot_confusion_matrix(cm,test_y,pred_y,method,args.show_plot,args.save_plot)
     print("="*50)
     print("#"*50)
